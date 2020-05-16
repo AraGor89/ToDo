@@ -1,0 +1,62 @@
+$borderRadius: 10px;
+$noBorder: 0px;
+$font18: 18px;
+@mixin common {
+  border: $noBorder;
+  border-radius: $borderRadius;
+  font-size: $font18;
+}
+.mainInput {
+  @include common;
+  background-color: #29cae4;
+  width: 60%;
+  height: 50px;
+  padding: 0 20px;
+  margin: 20px;
+  color: white;
+}
+.mainInput::placeholder {
+  color: rgb(255, 255, 255);
+}
+.mainInput:focus,
+.listItem:focus,
+.addButton:focus {
+  outline: none;
+}
+.addButton {
+  @include common;
+  height: 50px;
+  width: 10%;
+  background-color: #4638ca;
+  cursor: pointer;
+  font-weight: bolder;
+  color: aliceblue;
+}
+.list {
+  position: relative;
+}
+.listItem {
+  @include common;
+  color: black;
+  width: 70%;
+  height: 30px;
+  background-color: #c9d4e3;
+  margin: 20px auto auto 20px;
+  padding-left: 10px;
+}
+.delButton {
+  width: 30px;
+  position: absolute;
+  bottom: 7%;
+  left: 74%;
+}
+@media only screen and (max-width: 1260px) {
+  .mainInput,
+  .listItem {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+  .addButton {
+    font-size: 10px;
+  }
+}
